@@ -1,0 +1,16 @@
+classDiagram
+    class User {
+        +userId: String
+        +username: String
+        +email: String
+    }
+
+    class Medication {
+        +medicationId: String
+        +name: String
+        +dosage: String
+        +frequency: String
+    }
+
+    User -->  Medication : manage
+
