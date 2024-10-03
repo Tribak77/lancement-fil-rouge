@@ -8,7 +8,6 @@ user -- (Manage Medication Info)
 user -- (View Medications)
 
 (Add Medication) <.. (Enter Medication Details) : <<include>>
-(Add Medication) <.. (Verify Drug Information) : <<include>>
 
 (Manage Medication Info) <.. (Edit Medication) : <<include>>
 (Manage Medication Info) <.. (Delete Medication) : <<include>>
