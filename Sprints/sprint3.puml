@@ -1,0 +1,11 @@
+@startuml sprint 3
+left to right direction
+
+actor "User" as user
+
+user -- (User Authentication)
+
+(User Authentication) <.. (Login) : <<include>>
+(User Authentication) <.. (Logout) : <<include>>
+
+@enduml

@@ -1,0 +1,19 @@
+@startuml sprint 2
+left to right direction
+
+actor "User" as user
+
+user -- (Log Dose)
+user -- (View Medication History)
+user -- (Receive Reminder Notifications)
+
+(Log Dose) <.. (Mark as Taken) : <<include>>
+(Log Dose) <.. (Snooze Reminder) : <<include>>
+(Log Dose) <.. (Skip Dose) : <<include>>
+
+(View Medication History) <.. (View Doses Log) : <<include>>
+(View Medication History) <.. (View Adherence Statistics) : <<include>>
+
+(Receive Reminder Notifications) <.. (Receive Notification) : <<include>>
+
+@enduml

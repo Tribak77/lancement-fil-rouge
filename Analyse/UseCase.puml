@@ -1,31 +1,36 @@
-@startuml Medication Reminder
+@startuml Medication Reminder App
 left to right direction
 
 actor "User" as user
 
 user -- (Add Medication)
-user -- (Schedule Reminder)
-user -- (Log Dose)
-user -- (View Medication History)
 user -- (Manage Medication Info)
+user -- (View Medications)
 
 (Add Medication) <.. (Enter Medication Details) : <<include>>
 (Add Medication) <.. (Verify Drug Information) : <<include>>
-(Add Medication) <... (Authenticate User) : <<include>>
 
-(Schedule Reminder) <.. (Set Reminder Frequency) : <<include>>
-(Schedule Reminder) <.. (Set Reminder Type) : <<include>>
-(Schedule Reminder) <... (Authenticate User) : <<include>>
+(Manage Medication Info) <.. (Edit Medication) : <<include>>
+(Manage Medication Info) <.. (Delete Medication) : <<include>>
+
+(View Medications) <.. (Retrieve Medication List) : <<include>>
+
+user -- (Log Dose)
+user -- (View Medication History)
+user -- (Receive Reminder Notifications)
 
 (Log Dose) <.. (Mark as Taken) : <<include>>
 (Log Dose) <.. (Snooze Reminder) : <<include>>
 (Log Dose) <.. (Skip Dose) : <<include>>
-(Log Dose) <... (Authenticate User) : <<include>>
 
-(View Medication History) <... (Authenticate User) : <<include>>
+(View Medication History) <.. (View Doses Log) : <<include>>
+(View Medication History) <.. (View Adherence Statistics) : <<include>>
 
-(Manage Medication Info) <.. (Edit Medication) : <<include>>
-(Manage Medication Info) <.. (Delete Medication) : <<include>>
-(Manage Medication Info) <... (Authenticate User) : <<include>>
+(Receive Reminder Notifications) <.. (Receive Notification) : <<include>>
+
+user -- (User Authentication)
+
+(User Authentication) <.. (Login) : <<include>>
+(User Authentication) <.. (Logout) : <<include>>
 
 @enduml
