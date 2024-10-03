@@ -1,0 +1,39 @@
+@startuml
+left to right direction
+
+actor "User" as user
+
+user -- (Add Medication)
+user -- (Schedule Reminder)
+user -- (Log Dose)
+user -- (View Medication History)
+user -- (Receive Refill Reminder)
+user -- (Set Up Caregiver Access)
+user -- (Manage Medication Info)
+
+(Add Medication) <.. (Enter Medication Details) : <<include>>
+(Add Medication) <.. (Verify Drug Information) : <<include>>
+(Add Medication) <... (Authenticate User) : <<include>>
+
+(Schedule Reminder) <.. (Set Reminder Frequency) : <<include>>
+(Schedule Reminder) <.. (Set Reminder Type) : <<include>>
+(Schedule Reminder) <... (Authenticate User) : <<include>>
+
+(Log Dose) <.. (Mark as Taken) : <<include>>
+(Log Dose) <.. (Snooze Reminder) : <<include>>
+(Log Dose) <.. (Skip Dose) : <<include>>
+(Log Dose) <... (Authenticate User) : <<include>>
+
+(View Medication History) <... (Authenticate User) : <<include>>
+
+(Set Up Caregiver Access) <.. (Add Caregiver) : <<include>>
+(Set Up Caregiver Access) <.. (Remove Caregiver) : <<include>>
+(Set Up Caregiver Access) <... (Authenticate User) : <<include>>
+
+(Manage Medication Info) <.. (Edit Medication) : <<include>>
+(Manage Medication Info) <.. (Delete Medication) : <<include>>
+(Manage Medication Info) <... (Authenticate User) : <<include>>
+
+(Receive Refill Reminder) <... (Authenticate User) : <<include>>
+
+@enduml
